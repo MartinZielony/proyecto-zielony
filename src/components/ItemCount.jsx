@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 
-    const ItemCount = ({ stock = 0, initial = 1, onAdd }) => {
+    const ItemCount = ({ stock, initial, onAdd }) => {
 
     const [items, setItems] = useState(0);
 
