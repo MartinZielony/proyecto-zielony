@@ -1,10 +1,11 @@
-import IconoCarrito from './shopping_cart_white_24dp.svg'; //Importo el archivo para luego llamarlo desde la función
+import { Badge } from "@mui/material";
+import { ShoppingCartOutlined } from "@mui/icons-material";
 
 const CartWidget = () => {
     return (
-        <>
-        <a href="#"><img src={IconoCarrito} alt="Ícono de Carrito"></img></a> 
-        </>
+        <Badge>
+            <ShoppingCartOutlined/>
+        </Badge>
     );
 }
 

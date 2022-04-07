@@ -1,12 +1,14 @@
-import {useState, useEffect} from 'react';
+import { Button } from '@mui/material';
+import {Add, Remove} from '@mui/icons-material';
+import { useEffect, useState } from 'react';
+import { ProductAmountContainer, ProductAmount } from './styledComponents';
 
     const ItemCount = ({ stock, initial, onAdd }) => {
-
-    const [items, setItems] = useState(0);
+        const [items, setItems] = useState(0);
 
     useEffect(() => {
         setItems(initial);
-    },[]);
+    }, [initial]);
 
     const SumarItems = () => {
         if(items<stock){
@@ -22,14 +24,16 @@ import {useState, useEffect} from 'react';
     }
 
     return (
-        <div className='itemCount-container' id='itemCount-container'>
-        <div className='modifCuenta-container' id='modifCuenta-container'>
-            <button className='btn btn-danger' onClick={RestarItems}>-</button>
-            <strong>{items} Items</strong>
-            <button className='btn btn-success' onClick={SumarItems}>+</button>
-        </div>
-        <button className='btn btn-dark' onClick={() => onAdd(items)}>Agregar al carrito</button>
-        </div>
+        <ProductAmountContainer>
+            <Button variant='text' onClick={SumarItems}><Add/></Button>
+            <ProductAmount>{items}</ProductAmount>
+            <Button variant='text' onClick={RestarItems}><Remove/></Button>
+            {
+                stock
+                ?<Button variant="contained" onClick={() => onAdd(items)}>Agregar al Carrito</Button>
+                :<Button variant="contained" disabled>Agregar al Carrito</Button>
+            }
+        </ProductAmountContainer>
     );
 }
 

@@ -2,16 +2,23 @@ import ItemCount from './ItemCount.jsx';
 import ItemList from './ItemList.jsx';
 import customFetch from "../utils/customFetch";
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router'
 const { products } = require('../utils/products');
 
-function ItemListContainer(){    
-    const [datos, setDatos] = useState(0);
+const ItemListContainer = () => {    
+    const [datos, setDatos] = useState([]);
+    const idCategory = useParams();
+
+    console.log(idCategory);
 
     useEffect(() => {
-        customFetch(2000, products)
+        customFetch(2000, products.filter(item => {
+            if (idCategory === undefined) return item;
+            return item.categoryId === parseInt(idCategory)
+        }))
             .then(result => setDatos(result))
             .catch(err => console.log(err))
-    }, []);
+    }, [idCategory]);
 
     const onAdd = (qty) => {
         alert("Se han agregado " + qty + " items al carrito.")
