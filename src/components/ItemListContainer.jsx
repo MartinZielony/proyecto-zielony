@@ -18,11 +18,10 @@ const ItemListContainer = () => {
         }))
             .then(result => setDatos(result))
             .catch(err => console.log(err))
-    }, [idCategory]);
+    }, [datos]);
 
     const onAdd = (qty) => {
         alert("Se han agregado " + qty + " items al carrito.")
-        qty = 0;
     }
     
     return (

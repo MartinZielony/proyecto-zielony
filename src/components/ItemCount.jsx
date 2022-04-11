@@ -25,13 +25,13 @@ import { ProductAmountContainer, ProductAmount } from './styledComponents';
 
     return (
         <ProductAmountContainer>
-            <Button variant='text' onClick={SumarItems}><Add/></Button>
+            <Button style={{color:'#f06c9c'}} variant='text' onClick={SumarItems}><Add/></Button>
             <ProductAmount>{items}</ProductAmount>
-            <Button variant='text' onClick={RestarItems}><Remove/></Button>
+            <Button style={{color:'#f06c9c'}} variant='text' onClick={RestarItems}><Remove/></Button>
             {
                 stock
-                ?<Button variant="contained" onClick={() => onAdd(items)}>Agregar al Carrito</Button>
-                :<Button variant="contained" disabled>Agregar al Carrito</Button>
+                ?<Button style={{textDecoration: "none", color: "black", background:"#ffde2d"}} variant="contained" onClick={() => onAdd(items)}>Agregar al Carrito</Button>
+                :<Button style={{textDecoration: "none", color: "black", background:"#ffde2d"}} variant="contained" disabled>Agregar al Carrito</Button>
             }
         </ProductAmountContainer>
     );
