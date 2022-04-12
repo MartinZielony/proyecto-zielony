@@ -12,10 +12,7 @@ const ItemListContainer = () => {
     console.log(idCategory);
 
     useEffect(() => {
-        customFetch(2000, products.filter(item => {
-            if (idCategory === undefined) return item;
-            return item.categoryId === parseInt(idCategory)
-        }))
+        customFetch(2000, products)
             .then(result => setDatos(result))
             .catch(err => console.log(err))
     }, [datos]);
@@ -27,7 +24,6 @@ const ItemListContainer = () => {
     return (
         <>
         <ItemList items={datos}/>
-        <ItemCount stock={5} initial={0} onAdd={onAdd}/>
         </>
     );
 }

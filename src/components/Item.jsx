@@ -9,9 +9,6 @@ const Item = ({id, title, stock, price, pictureUrl}) => {
             <Image src={pictureUrl}/>
             <Info>
                 <Icon>
-                    <strong>{title}</strong>
-                </Icon>
-                <Icon>
                     <LocalOfferOutlined/><strong>$ {price}</strong>
                 </Icon>
                 <Icon>

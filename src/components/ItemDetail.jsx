@@ -1,7 +1,7 @@
 import ItemCount from "./ItemCount";
 import { DetailContainer, WrapperDetail, ImgContainer, ImageDetail, InfoContainer, Title, Desc, Price } from "./styledComponents";
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({ item }) => {
     
     const onAdd = (qty) => {
         alert("Seleccionaste "+qty+" Items.");
@@ -18,10 +18,10 @@ const ItemDetail = ({item}) => {
                         <ImageDetail src={item.image[0]}/>
                     </ImgContainer>
                     <InfoContainer>
-                        <Title></Title>
-                        <Desc></Desc>
-                        <Price></Price>
-                        <Desc></Desc>
+                        <Title>{item.name}</Title>
+                        <Desc>{item.description}</Desc>
+                        <Price>$ {item.cost}</Price>
+                        <Desc>{item.stock} unid. en Stock</Desc>
                     </InfoContainer>
                     <ItemCount stock={item.stock} initial={0} onAdd={onAdd}/>
                 </WrapperDetail>
