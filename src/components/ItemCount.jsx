@@ -29,7 +29,7 @@ import { ProductAmountContainer, ProductAmount } from './styledComponents';
             <ProductAmount>{items}</ProductAmount>
             <Button style={{color:'#f06c9c'}} variant='text' onClick={RestarItems}><Remove/></Button>
             {
-                stock
+                stock && items
                 ?<Button style={{textDecoration: "none", color: "black", background:"#ffde2d"}} variant="contained" onClick={() => onAdd(items)}>Agregar al Carrito</Button>
                 :<Button style={{textDecoration: "none", color: "black", background:"#ffde2d"}} variant="contained" disabled>Agregar al Carrito</Button>
             }
