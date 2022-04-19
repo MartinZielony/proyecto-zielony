@@ -35,6 +35,8 @@ const ItemDetail = ({ item }) => {
                                 itemCount === 0
                                     ? <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
                                     : <Link to='/cart' style={{ textDecoration: 'none' }}><Button variant='contained'style={{background:'#f06c9c'}}>Ver Carrito</Button></Link>
+                                        
+                                    
                             }
                         </WrapperDetail>
                     </DetailContainer>

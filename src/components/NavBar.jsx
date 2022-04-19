@@ -18,7 +18,7 @@ const NavBar = () => {
                 <Right>
                     <MenuItem style={{ textDecoration: "none", color: "#ffde2d" }}>Registrarse</MenuItem>
                     <MenuItem style={{ textDecoration: "none", color: "#ffde2d" }}>Iniciar Sesión</MenuItem>
-                    <MenuItem style={{ textDecoration: "none", color: "#ffde2d" }}><CartWidget /></MenuItem>
+                    <MenuItem><Link to='/cart' style={{ textDecoration: "none", color: "#ffde2d" }}><CartWidget /></Link></MenuItem>
                 </Right>
             </Wrapper>
         </AppBar>
