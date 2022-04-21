@@ -23,12 +23,12 @@ const ItemDetail = ({ item }) => {
                     <DetailContainer>
                         <WrapperDetail>
                             <ImgContainer>
-                                <ImageDetail src={item.image[0]} />
+                                <ImageDetail src={item.imagen} />
                             </ImgContainer>
                             <InfoContainer>
-                                <Title>{item.name}</Title>
-                                <Desc>{item.description}</Desc>
-                                <Price>$ {item.cost}</Price>
+                                <Title>{item.nombre}</Title>
+                                <Desc>{item.descripcion}</Desc>
+                                <Price>$ {item.precio}</Price>
                                 <Desc>{item.stock} unid. en Stock</Desc>
                             </InfoContainer>
                             {

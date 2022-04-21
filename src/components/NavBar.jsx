@@ -11,9 +11,12 @@ const NavBar = () => {
                     <Link to='/' style={{ TextDecoration: 'none', color: '#ffde2d' }}><Logo>PINK LEMON</Logo></Link>
                 </Left>
                 <Center>
-                    <Link to='/category/9' style={{ textDecoration: "none", color: '#ffde2d'}}><MenuItem style={{}}>Sin Alcohol</MenuItem></Link>
-                    <Link to='/category/1' style={{ textDecoration: "none", color: '#ffde2d'}}><MenuItem>Vinos</MenuItem></Link>
-                    <Link to='/category/5' style={{ textDecoration: "none", color: '#ffde2d'}}><MenuItem>Licores</MenuItem></Link>
+                    <Link to='/category/1' style={{ textDecoration: "none", color: '#ffde2d'}}><MenuItem>Accesorios</MenuItem></Link>
+                    <Link to='/category/2' style={{ textDecoration: "none", color: '#ffde2d'}}><MenuItem>Masajeadores</MenuItem></Link>
+                    <Link to='/category/3' style={{ textDecoration: "none", color: '#ffde2d'}}><MenuItem>Cremas</MenuItem></Link>
+                    <Link to='/category/4' style={{ textDecoration: "none", color: '#ffde2d'}}><MenuItem>Mascarillas</MenuItem></Link>
+                    <Link to='/category/5' style={{ textDecoration: "none", color: '#ffde2d'}}><MenuItem>Combos</MenuItem></Link>
+                    <Link to='/category/6' style={{ textDecoration: "none", color: '#ffde2d'}}><MenuItem>Otros</MenuItem></Link>
                 </Center>
                 <Right>
                     <MenuItem style={{ textDecoration: "none", color: "#ffde2d" }}>Registrarse</MenuItem>
