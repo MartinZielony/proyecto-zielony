@@ -23,9 +23,10 @@ export const fsFetchOne = async (idItem) => {
 
     if(docSnap.exists()){
         return {
-            idItem: idItem,
+            id: idItem,
             ...docSnap.data()
         }
+        
     } else {
         console.log("No se encontró el documento.")
     }

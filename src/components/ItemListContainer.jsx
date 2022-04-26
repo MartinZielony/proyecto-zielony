@@ -7,8 +7,6 @@ const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
     const { idCategory } = useParams();
 
-    console.log(idCategory);
-
     useEffect(() => {
         fsFetch(idCategory)
             .then(result => setDatos(result))
