@@ -43,7 +43,7 @@ const CartContextProvider = ({children}) => {
 
     const calcTotalPorItem = (idItem) => {
         let index = cartList.map(item => item.idItem).indexOf(idItem);
-        console.log(cartList[index].costItem);
+        console.log(cartList[index].costItem); //Puse este console.log en un intento de entender el error que me aparece en el navegador
         return cartList[index].costItem * cartList[index].qtyItem;
     }
 
