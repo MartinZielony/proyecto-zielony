@@ -3,9 +3,11 @@ import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 import { WrapperCart, TitleCart, ContentCart, Product, ProductDetail, ImageCart, Details, PriceDetail, ProductAmountContainer, ProductAmount, ProductPrice } from "./styledComponents";
 
-
 import styled from "styled-components";
 import FormatNumber from "../utils/formatNumber";
+
+import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
+import db from "../utils/firebaseConfig";
 
 const Top = styled.div`
   display: flex;
@@ -72,6 +74,47 @@ const Button = styled.button`
 const Cart = () => {
     const test = useContext(CartContext);
 
+    const crearPedido = () => {
+        const itemsParaDB = test.cartList.map(item => ({
+            id: item.id,
+            title: item.nombre,
+            price: item.precio
+        }));
+
+        test.cartList.forEach(async (item) => {
+            const itemRef = doc(db, "productos", item.id);
+            await updateDoc(itemRef, {
+                stock: increment(-item.qtyItem)
+            });
+        });
+    
+        let pedido = {
+            comprador: {
+                nombre: "Martín Zielony",
+                email: "martozielony@gmail.com",
+                nroTelefono: "123456789"
+            },
+            total: test.calcTotal(),
+            items: itemsParaDB,
+            date: serverTimestamp()
+        };
+
+        console.log("Resumen del pedido:");
+        console.log(pedido);
+
+        const crearPedidoEnFS = async () => {
+            const nuevoPedidoRef = doc(collection(db, "pedidos"));
+            await setDoc(nuevoPedidoRef, pedido);
+            return nuevoPedidoRef;
+        }
+
+        crearPedidoEnFS()
+        .then(result => alert("Tu pedido ha sido creado. Por favor anote el ID.\n\n\nID del pedido: " + result.id + "\n\n"))
+        .catch(err => console.log(err));
+
+        test.borrarCarrito();
+    }
+
     return (
         <WrapperCart>
             <TitleCart>Carrito</TitleCart>
@@ -89,14 +132,14 @@ const Cart = () => {
                     {
                     test.cartList.length > 0 &&
                         test.cartList.map(item =>
-                            <Product key={item.idItem}>
+                            <Product key={item.id}>
                                 <ProductDetail>
-                                    <ImageCart src={item.imgItem} />
+                                    <ImageCart src={item.imagen} />
                                     <Details>
                                         <span>
-                                            <b>Product: </b> {item.nameItem}
+                                            <b>Product: </b> {item.nombre}
                                         </span>
-                                        <TopButton type="filled" onClick={() => test.borrarItem(item.idItem)}>Borrar Item</TopButton>
+                                        <TopButton type="filled" onClick={() => test.borrarItem(item.id)}>Borrar Item</TopButton>
                                     </Details>
                                 </ProductDetail>
                                 <PriceDetail>
@@ -131,7 +174,7 @@ const Cart = () => {
                                 <SummaryItemText>Total</SummaryItemText>
                                 <SummaryItemPrice><FormatNumber number={test.calcTotal()}/></SummaryItemPrice>
                             </SummaryItem>
-                            <Button>Comprar</Button>
+                            <Button onClick={crearPedido}>Comprar</Button>
                         </Summary>
                     }
                 </Bottom>

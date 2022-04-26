@@ -12,9 +12,9 @@ const CartContextProvider = ({children}) => {
                 ...cartList,
                 {
                     idItem: item.id,
-                    imgItem: item.image[0],
-                    nameItem: item.name,
-                    costItem: item.cost,
+                    imgItem: item.imagen,
+                    nameItem: item.nombre,
+                    costItem: item.precio,
                     qtyItem: qty
                 }
             ]);
@@ -43,11 +43,12 @@ const CartContextProvider = ({children}) => {
 
     const calcTotalPorItem = (idItem) => {
         let index = cartList.map(item => item.idItem).indexOf(idItem);
+        console.log(cartList[index].costItem);
         return cartList[index].costItem * cartList[index].qtyItem;
     }
 
     const calcSubTotal = () => {
-        let totalPorItem = cartList.map(item => calcTotalPorItem(item.idItem));
+        let totalPorItem = cartList.map(item => calcTotalPorItem(item.id));
         return totalPorItem.reduce((previousValue, currentValue) => previousValue + currentValue);
     }
 

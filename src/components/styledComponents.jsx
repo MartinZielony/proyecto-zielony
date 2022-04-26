@@ -23,6 +23,7 @@ const Center = styled.div`
 
 const Logo = styled.h1`
     font-weight: bold;
+    color: #ffde2d;
 `;
 
 const Right = styled.div`
@@ -36,6 +37,7 @@ const MenuItem = styled.div`
     font-size: 14px;
     font-weight: bold;
     
+    color: #ffde2d;
     cursor: pointer;
     margin-left: 25px;
 `;
@@ -103,7 +105,10 @@ const Circle = styled.div`
 
 const Image = styled.img`
     height: 75%;
+    padding: 2%;
     z-index: 2;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 13px;
 `;
 
 const Icon = styled.div`
