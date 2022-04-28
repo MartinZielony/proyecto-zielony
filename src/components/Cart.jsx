@@ -134,12 +134,12 @@ const Cart = () => {
                         test.cartList.map(item =>
                             <Product key={item.id}>
                                 <ProductDetail>
-                                    <ImageCart src={item.imagen} />
+                                    <ImageCart src={item.imgItem} />
                                     <Details>
                                         <span>
-                                            <b>Product: </b> {item.nombre}
+                                            <b>Product: </b> {item.nameItem}
                                         </span>
-                                        <TopButton type="filled" onClick={() => test.borrarItem(item.id)}>Borrar Item</TopButton>
+                                        <TopButton type="filled" onClick={() => test.borrarItem(item.idItem)}>Borrar Item</TopButton>
                                     </Details>
                                 </ProductDetail>
                                 <PriceDetail>
