@@ -108,8 +108,11 @@ const Cart = () => {
             return nuevoPedidoRef;
         }
 
+
         crearPedidoEnFS()
-        .then(result => alert("Tu pedido ha sido creado. Por favor anote el ID.\n\n\nID del pedido: " + result.id + "\n\n"))
+        .then(result => {
+            alert("Tu pedido ha sido creado. Por favor anote el ID.\n\n\nID del pedido: " + result.id + "\n\n")
+        })
         .catch(err => console.log(err));
 
         test.borrarCarrito();
