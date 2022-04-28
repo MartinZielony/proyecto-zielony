@@ -1,9 +1,9 @@
 import ItemList from './ItemList.jsx';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router'
-import {fsFetch} from '../utils/fsFetch'
+import { fsFetch } from '../utils/fsFetch'
 
-const ItemListContainer = () => {    
+const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
     const { idCategory } = useParams();
 
@@ -18,10 +18,10 @@ const ItemListContainer = () => {
             setDatos([]);
         })
     }, []);
-    
+
     return (
         <>
-        <ItemList items={datos}/>
+            <ItemList items={datos} />
         </>
     );
 }

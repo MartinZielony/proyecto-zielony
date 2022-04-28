@@ -37,9 +37,13 @@ const MenuItem = styled.div`
     font-size: 14px;
     font-weight: bold;
     
+    padding: 0.3vw;
     color: #ffde2d;
     cursor: pointer;
     margin-left: 25px;
+    border: solid transparent;
+    border-radius: 10px;
+    transition: all 0.2s ease;
 `;
 
 
@@ -162,7 +166,7 @@ const Desc = styled.p`
     margin: 20px 0px;
 `;
 
-const Price  = styled.span`
+const Price = styled.span`
     font-weight: 100;
     font-size: 40px;
 `;
@@ -217,9 +221,9 @@ const ProductPrice = styled.div`
   font-weight: 200;
 `;
 
-export { 
-    Wrapper, Logo, MenuItem, Left, Center, Right, 
-    ProductAmountContainer, ProductAmount, 
+export {
+    Wrapper, Logo, MenuItem, Left, Center, Right,
+    ProductAmountContainer, ProductAmount,
     ProductsContainer, ProductContainer,
     Circle, Image, Info, Icon,
     DetailContainer, WrapperDetail, ImgContainer, ImageDetail, InfoContainer, Title, Desc, Price,

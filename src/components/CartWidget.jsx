@@ -5,10 +5,10 @@ import { CartContext } from "../contexts/CartContext";
 
 const CartWidget = () => {
     const test = useContext(CartContext);
-    
+
     return (
         <Badge badgeContent={test.calcCantItems()} color="secondary">
-            <ShoppingCartOutlined/>
+            <ShoppingCartOutlined />
         </Badge>
     );
 }

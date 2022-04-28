@@ -21,12 +21,12 @@ export const fsFetchOne = async (idItem) => {
     const docRef = doc(db, "productos", idItem);
     const docSnap = await getDoc(docRef);
 
-    if(docSnap.exists()){
+    if (docSnap.exists()) {
         return {
             id: idItem,
             ...docSnap.data()
         }
-        
+
     } else {
         console.log("No se encontró el documento.")
     }

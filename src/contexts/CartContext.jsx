@@ -2,12 +2,12 @@ import { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
-const CartContextProvider = ({children}) => {
+const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
-    
+
     const agregarAlCarrito = (item, qty) => {
         let found = cartList.find(product => product.idItem === item.id);
-        if (found === undefined){
+        if (found === undefined) {
             setCartList([
                 ...cartList,
                 {
@@ -61,16 +61,16 @@ const CartContextProvider = ({children}) => {
 
     return (
         <CartContext.Provider value={{
-            cartList, 
-            agregarAlCarrito, 
-            borrarCarrito, 
+            cartList,
+            agregarAlCarrito,
+            borrarCarrito,
             borrarItem,
             calcCantItems,
             calcTotalPorItem,
             calcSubTotal,
             calcImpuestos,
             calcTotal
-            }}>
+        }}>
             {children}
         </CartContext.Provider>
     );
