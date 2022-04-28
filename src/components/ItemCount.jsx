@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import {Add, Remove} from '@mui/icons-material';
 import { useEffect, useState } from 'react';
-import { ProductAmountContainer, ProductAmount } from './styledComponents';
+import { ProductAmountContainer, ProductAmount } from '../styles/styledComponents';
 
     const ItemCount = ({ stock, initial, onAdd }) => {
         const [items, setItems] = useState(0);

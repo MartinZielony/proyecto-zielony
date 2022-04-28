@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import { useState, useContext } from "react";
 import ItemCount from "./ItemCount";
 import {Link} from 'react-router-dom';
-import { DetailContainer, WrapperDetail, ImgContainer, ImageDetail, InfoContainer, Title, Desc, Price } from "./styledComponents";
+import { DetailContainer, WrapperDetail, ImgContainer, ImageDetail, InfoContainer, Title, Desc, Price } from "../styles/styledComponents";
 import { CartContext } from '../contexts/CartContext'
 
 const ItemDetail = ({ item }) => {
