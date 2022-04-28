@@ -76,13 +76,13 @@ const Cart = () => {
 
     const crearPedido = () => {
         const itemsParaDB = test.cartList.map(item => ({
-            id: item.id,
-            title: item.nombre,
-            price: item.precio
+            id: item.idItem,
+            title: item.nameItem,
+            price: item.costItem
         }));
 
         test.cartList.forEach(async (item) => {
-            const itemRef = doc(db, "productos", item.id);
+            const itemRef = doc(db, "productos", item.idItem);
             await updateDoc(itemRef, {
                 stock: increment(-item.qtyItem)
             });
@@ -96,7 +96,7 @@ const Cart = () => {
             },
             total: test.calcTotal(),
             items: itemsParaDB,
-            date: serverTimestamp()
+            fecha: serverTimestamp()
         };
 
         console.log("Resumen del pedido:");
