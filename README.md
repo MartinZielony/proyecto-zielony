@@ -1,6 +1,8 @@
-# Proyecto eCommerce PINK LEMON, de Martín Zielony
+### Proyecto eCommerce PINK LEMON, de Martín Zielony
 
-Este es un proyecto para el curso de Desarrollo de Sitios Web en ReactJS de CODER HOUSE.
-Este proyecto utiliza lo aprendido en clase, en conjunto con MaterialUI para crear la tienda online del emprendimiento de productos de cuidado de piel "PINK LEMON".
+##### Este es un proyecto para el curso de Desarrollo de Sitios Web en ReactJS de CODER HOUSE.
+El proyecto utiliza lo aprendido en clase, en conjunto con MaterialUI y unos elementos estilizados customizados, para crear la tienda online del emprendimiento de productos de cuidado para la piel "PINK LEMON".
 
-Más adelante este README explicará en detalle las decisiones que tome para este proyecto que se distingan de lo que he visto en el curso.
+![](https://firebasestorage.googleapis.com/v0/b/proyecto-ch-zielony.appspot.com/o/logoPL.png?alt=media&token=72f0f555-ff05-437a-84e4-01ca56faf929g)
+
+El proyecto utiliza Firebase para el almacenamiento de productos y el manejo de compras.
